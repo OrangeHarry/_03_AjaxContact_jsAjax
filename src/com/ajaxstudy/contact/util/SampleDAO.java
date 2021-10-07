@@ -138,4 +138,18 @@ public class SampleDAO {
 		}
 		return count;
 	}
+	
+	//전달받은 no 파라미터로 해당 데이터 조회 메소드
+	public static Contact getContactByNo(long no) {
+		Contact c = null;
+		for (int i = 0; i < contacts.size(); i++) {
+			Contact temp = contacts.get(i);
+			if (temp.getNo() == no) {
+				c = temp;
+				break;
+			}
+		}
+		return c;
+	}
+	
 }
