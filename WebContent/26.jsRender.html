@@ -47,6 +47,8 @@
 		$(document).ready(function(){
 			$.get("/contact/list.do", function(data){
 				var obj = JSON.parse(data); //서버로부터 응답받은 데이터 -> JSON 객체로 변환
+				console.log(obj);
+				console.log(obj.contacts);
 				var tmpl = $.templates("#contact_template"); //veiwTemplate 영역 변수로 선언
 				var str = tmpl.render(obj.contacts); //데이터 + viewTemplate = html UI
 				/*
